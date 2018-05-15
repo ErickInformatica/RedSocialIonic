@@ -1,0 +1,8 @@
+{
+  "name": "redsocial",
+  "app_id": "0bbe229c",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

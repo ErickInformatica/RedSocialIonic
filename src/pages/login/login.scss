@@ -1,0 +1,66 @@
+
+
+
+
+.login-bg {
+    background: url("../../assets/imgs/The Flooded Depths.png") no-repeat;
+ /* Background image is centered vertically and horizontally at all times */
+ background-position: center center;
+  
+ /* Background image doesn't tile */
+ background-repeat: no-repeat;
+ 
+ /* Background image is fixed in the viewport so that it doesn't move when 
+    the content's height is greater than the image's height */
+ background-attachment: fixed;
+ 
+ /* This is what makes the background image rescale based
+    on the container's size */
+ background-size: cover;
+}
+
+.text-primary {
+    color: color($colors, login);
+  }
+
+  .list-form {
+    padding: 0;
+    margin-bottom: 0;
+
+    ion-item {
+      background: none;
+      padding: 0;
+
+      &:first-child {
+        border-top: none;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      ion-label {
+        font-size: 1em;
+        color: color($colors, login);
+      }
+
+      input {
+        color: color($colors, login);
+      }
+    }
+  }
+
+  // buttons configs
+.btn-facebook {
+    background-color: #3B5999;
+  }
+  
+  .btn-twitter {
+    background-color: #00ACEE;
+  }
+  
+  .btn-gplus {
+    background-color: #E04006
+  }
+
+

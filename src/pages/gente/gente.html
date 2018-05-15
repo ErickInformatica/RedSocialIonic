@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="login">
+    <ion-title>
+     Usuarios
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let usuario of users">
+
+    <ion-card-header>
+      <h1>
+        {{usuario.nick}}
+      </h1>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <button ion-button full color="primary"
+
+          round>
+            Ver mas...
+          </button>
+
+          <div *ngIf="usuario._id != identity._id">
+            <button ion-button full color="primary" *ngIf="follows.indexOf(usuario._id) < 0" 
+            (click)="followUser(usuario._id)" mdbRippleRadius><i class="fa fa-plus" aria-hidden="true" round></i> Seguir</button>
+            
+            <button ion-button full *ngIf="follows.indexOf(usuario._id) >= 0"
+               (mouseenter)="mouseEnter(usuario._id)" (mouseleave)="mouseLeave(usuario._id)"
+               [class.red]="usuario._id == followUserOver" (click)="unfollowUser(usuario._id)" >
+              <i *ngIf="usuario._id == followUserOver; else following">
+                  <i></i>Dejar de Seguir
+              </i>
+              
+              <i *ngIf="following">
+              <i></i>Siguiendo
+              </i>
+              
+            </button>    
+
+        </div>
+        </ion-item>
+      </ion-list>
+      
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+   <button ion-fab color="primary" >
+     <ion-icon name="md-add"></ion-icon>
+   </button>
+ </ion-fab>
+</ion-content>
